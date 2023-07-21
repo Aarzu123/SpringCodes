@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
+
+
+	<bean id="empObj1" class="com.ioc.xml.model.Employee">
+	
+		<constructor-arg index="0" type="int" value="1001"></constructor-arg>
+		<constructor-arg index="1" type="String" value="Tim"></constructor-arg>
+		<constructor-arg index="2" type="int" value="23"></constructor-arg>	
+		<constructor-arg index="3" type="java.util.List">
+			<list>
+				<ref bean="addObj1"/>
+				<ref bean="addObj2"/>
+			</list>
+		</constructor-arg>	
+		
+	</bean>
+	
+	<bean id="empObj2" class="com.ioc.xml.model.Employee">
+	
+		<constructor-arg index="0" type="int" value="1002"></constructor-arg>
+		<constructor-arg index="1" type="String" value="Rim"></constructor-arg>
+		<constructor-arg index="2" type="int" value="22"></constructor-arg>	
+		<constructor-arg index="3" type="java.util.List">
+			<list>
+				<ref bean="addObj3"/>
+			</list>
+		</constructor-arg>	
+		
+	</bean>
+	
+	<bean id="addObj1" class="com.ioc.xml.model.Address">
+	
+		<constructor-arg>
+			<value>1</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>Pune</value>
+		</constructor-arg>
+				<constructor-arg>
+			<value>India</value>
+		</constructor-arg>
+	
+	</bean>
+	
+		<bean id="addObj2" class="com.ioc.xml.model.Address">
+	
+		<constructor-arg>
+			<value>2</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>Bangalore</value>
+		</constructor-arg>
+				<constructor-arg>
+			<value>India</value>
+		</constructor-arg>
+	
+	</bean>
+	
+	<bean id="addObj3" class="com.ioc.xml.model.Address">
+	
+		<constructor-arg index="0" type="int" value="3"></constructor-arg>
+		<constructor-arg index="1" type="String" value="Chennai"></constructor-arg>
+		<constructor-arg index="2" type="String" value="India"></constructor-arg>
+			
+	</bean>
+
+
+
+
+
+
+</beans>
